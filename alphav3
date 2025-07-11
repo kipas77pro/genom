@@ -248,13 +248,13 @@ apt install git curl python3 apt  figlet python3-pip apt-transport-https ca-cert
 
 cd
 clear
-wget https://raw.githubusercontent.com/kipas77pro/genom/main/TOOLS/limit.sh -O limit.sh && chmod +x limit.sh && ./limit.sh
+wget https://raw.githubusercontent.com/kipas77pro/genom/main/files/limit.sh -O limit.sh && chmod +x limit.sh && ./limit.sh
 clear
 
 # --- Fungsi Instalasi Modul ---
 res3() {
     echo -e "${GREEN}    Memulai instalasi SSH WS / OpenVPN...${NC}"
-    wget https://raw.githubusercontent.com/kipas77pro/genom/main/SYSTEM/ssh-vpn.sh -O ssh-vpn.sh
+    wget https://raw.githubusercontent.com/kipas77pro/vip/main/SYSTEM/ssh-vpn.sh -O ssh-vpn.sh
     chmod +x ssh-vpn.sh
     ./ssh-vpn.sh
     sudo systemctl enable --now chrony.service
@@ -264,7 +264,7 @@ res3() {
 
 res4() {
     echo -e "${GREEN}    Memulai instalasi XRAY...${NC}"
-    wget https://raw.githubusercontent.com/kipas77pro/genom/main/SYSTEM/ins-xray.sh -O ins-xray.sh
+    wget https://raw.githubusercontent.com/kipas77pro/vip/main/SYSTEM/ins-xray.sh -O ins-xray.sh
     chmod +x ins-xray.sh
     ./ins-xray.sh
     clear
@@ -272,7 +272,7 @@ res4() {
 
 res5() {
     echo -e "${GREEN}    Memulai instalasi WEBSOCKET SSH...${NC}"
-    wget https://raw.githubusercontent.com/kipas77pro/genom/main/WEBSOCKET/insshws.sh -O insshws.sh
+    wget https://raw.githubusercontent.com/kipas77pro/vip/main/WEBSOCKET/insshws.sh -O insshws.sh
     chmod +x insshws.sh
     ./insshws.sh
     clear
@@ -280,7 +280,7 @@ res5() {
 
 res6() {
     echo -e "${GREEN}    Memulai instalasi BACKUP MENU...${NC}"
-    wget https://raw.githubusercontent.com/kipas77pro/genom/main/SYSTEM/set-br.sh -O set-br.sh
+    wget https://raw.githubusercontent.com/kipas77pro/vip/main/SYSTEM/set-br.sh -O set-br.sh
     chmod +x set-br.sh
     ./set-br.sh
     clear
@@ -288,7 +288,7 @@ res6() {
 
 res7() {
     echo -e "${GREEN}    Memulai instalasi OHP...${NC}"
-    wget https://raw.githubusercontent.com/kipas77pro/genom/main/WEBSOCKET/ohp.sh -O ohp.sh
+    wget https://raw.githubusercontent.com/kipas77pro/vip/main/WEBSOCKET/ohp.sh -O ohp.sh
     chmod +x ohp.sh
     ./ohp.sh
     clear
@@ -302,7 +302,7 @@ res8() {
     mv menu/* /usr/local/sbin
     rm -rf menu
     rm -rf menu.zip
-    wget -O menu https://raw.githubusercontent.com/kipas77pro/menu/refs/heads/main/menu/menu
+    #wget -O menu https://raw.githubusercontent.com/kipas77pro/menu/refs/heads/main/menu/menu
     sudo mv menu /usr/local/sbin/
     sudo chmod +x /usr/local/sbin/menu
     clear
@@ -310,7 +310,7 @@ res8() {
 
 res9() {
     echo -e "${GREEN}    Memulai pengunduhan SLOWDNS...${NC}"
-    wget https://raw.githubusercontent.com/kipas77pro/genom/main/SYSTEM/slowdns.sh -O slowdns.sh
+    wget https://raw.githubusercontent.com/kipas77pro/genom/main/slowdns/slowdns.sh -O slowdns.sh
     chmod +x slowdns.sh
     ./slowdns.sh
     clear
@@ -318,7 +318,7 @@ res9() {
 
 res10() {
     echo -e "${GREEN}    Memulai pengunduhan UDP CUSTOM...${NC}"
-    wget https://raw.githubusercontent.com/kipas77pro/genom/main/SYSTEM/udp-custom.sh -O udp-custom.sh
+    wget https://raw.githubusercontent.com/kipas77pro/genom/main/udp-custom/udp-custom.sh -O udp-custom.sh
     chmod +x udp-custom.sh
     bash udp-custom.sh
     clear
@@ -420,7 +420,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 fi
 history -c
 
-serverV=$( curl -sS https://raw.githubusercontent.com/kipas77pro/genom/main/TOOLS/versi )
+serverV=$( curl -sS https://raw.githubusercontent.com/kipas77pro/vip/main/TOOLS/versi )
 echo "$serverV" > /opt/.ver
 
 aureb=$(cat /home/re_otm)
