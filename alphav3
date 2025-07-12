@@ -56,33 +56,6 @@ echo -e "${GREEN}Mengunduh dan menginstal dependensi...${NC}"
 sleep 2
 
 clear
-
-# --- Detail API Bot Telegram ---
-TOKEN="7567594287:AAGVeDwRq9QrNg6jSce30eOm9WiVtAWKxjA
-CHAT_ID="6430177985"
-
-# --- Fungsi untuk Mengirim Pesan ke Telegram ---
-send_telegram_message() {
-    MESSAGE=$1
-    BUTTON1_URL="https://t.me/arya"
-    BUTTON2_URL="https://wa.me/6281931615811"
-    BUTTON_TEXT1="Telegram "
-    BUTTON_TEXT2="Whatsapp "
-
-    RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendMessage" \
-        -d chat_id="$CHAT_ID" \
-        -d parse_mode="MarkdownV2" \
-        -d text="$MESSAGE" \
-        -d reply_markup='{
-                "inline_keyboard": [
-                    [{"text": "'"$BUTTON_TEXT1"'", "url": "'"$BUTTON1_URL"'"}, {"text": "'"$BUTTON_TEXT2"'", "url": "'"$BUTTON2_URL"'"}]
-                ]
-            }')
-
-    # Cetak respons menggunakan jq untuk pretty-print
-    #echo "$RESPONSE" | jq .
-}
-
 # --- Validasi Root Access ---
 if [[ "${EUID}" -ne 0 ]]; then
     red "Script harus dijalankan sebagai user root!"
